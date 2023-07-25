@@ -1,0 +1,61 @@
+<resources>
+
+    <string name="app_name">Moringa</string>
+
+    <string name="powered">powered by mwinzi</string>
+
+    <string name="login">click button below to login using your school email</string>
+
+    <string name="welcome">Welcome back</string>
+    <string name="name">Joseph Mwinzi</string>
+
+    <string name="profile">Profile</string>
+    <string name="practice">what you dwell on expands</string>
+
+    <string name="info">My Information</string>
+    <string name="code">Qr Code</string>
+    <string name="wellness">Wellness</string>
+
+    <string name="assistant">My Student Assistant</string>
+    <string name="communication">Communication</string>
+    <string name="notepad">Notepad</string>
+    <string name="meet">Meet</string>
+    <string name="sheet">Sheets</string>
+    <string name="calendar">Calendar</string>
+
+    <string name="desk">Desk and Coffee</string>
+    <string name="blog">Student Blog</string>
+    <string name="blog2">Student Media Hub</string>
+    <string name="canvas">Canvas</string>
+    <string name="canva">Student Learning Management System</string>
+    <string name="github">Github</string>
+    <string name="git">Let\'s build from here</string>
+
+    <string name="qr">Click the button below to scan your</string>
+    <string name="qrr">lecture attendance qr code</string>
+    <string name="scan">Scan</string>
+
+    <string name="tired">Wellness is meant to help the school track</string>
+    <string name="tired2">your mental health</string>
+    <string name="tired3">Fill form</string>
+
+    <string name="mail">Gmail</string>
+    <string name="mail2">Student Gmail Messages</string>
+    <string name="slack">Slack</string>
+    <string name="slack2">Digital HQ</string>
+    <string name="contact">Contacts</string>
+    <string name="contact2">Moringa school contacts</string>
+
+    <string name="reminder">Reminders</string>
+    <string name="reminder2">Set your reminders</string>
+    <string name="task">Coding Tasks</string>
+    <string name="task2">To Code Later</string>
+    <string name="note">Notes</string>
+    <string name="note2">Jot It Down</string>
+
+    <string name="no">No Qr code Detected</string>
+    <string name="hover">Hold phone over qr code</string>
+
+    <string name="todo">image</string>
+
+</resources>

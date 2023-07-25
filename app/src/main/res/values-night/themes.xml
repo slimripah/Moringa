@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Moringa" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your dark theme here. -->
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/coal</item>
+        <item name="colorPrimaryVariant">@color/coal</item>
+        <item name="colorOnPrimary">@color/ash</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/coal</item>
+        <item name="colorSecondaryVariant">@color/coal</item>
+        <item name="colorOnSecondary">@color/gold</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
+    <!-- Dashboard Cards Style -->
+    <style name="dash">
+
+        <!-- Colors -->
+        <item name="cardBackgroundColor">@color/dracarys</item>
+        <item name="cardCornerRadius">15dp</item>
+        <item name="android:textColor">@color/smoke</item>
+        <item name="fontFamily">@font/gilroy_semi</item>
+
+    </style>
+
+    <style name="deuce">
+
+        <!-- Colors -->
+        <item name="cardBackgroundColor">@color/dracarys</item>
+        <item name="cardCornerRadius">15dp</item>
+        <item name="android:textColor">@color/ash</item>
+        <item name="fontFamily">@font/gilroy_semi</item>
+
+    </style>
+
+    <style name="duke">
+
+        <!-- Colors -->
+        <item name="android:tint">@color/gold</item>
+        <item name="android:textColor">@color/ash</item>
+
+    </style>
+
+    <style name="coal">
+
+        <!-- Colors -->
+        <item name="cardBackgroundColor">@color/coal</item>
+        <item name="cardCornerRadius">15dp</item>
+
+    </style>
+
+</resources>

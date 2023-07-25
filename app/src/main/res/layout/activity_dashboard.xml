@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".Common.Dashboard">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="5dp"
+        app:cardBackgroundColor="?colorPrimary"
+        app:cardCornerRadius="25dp">
+
+        <ImageView
+            android:id="@+id/pp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/todo"
+            android:layout_gravity="center"
+            android:src="@drawable/pp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@id/dp"
+        android:fontFamily="@font/gilroy_semi"
+        android:text="@string/welcome"
+        android:textColor="?colorOnPrimary"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcome"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@id/dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:text=""
+        android:textColor="?colorOnPrimary"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/web"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_web" />
+
+    <Button
+        android:id="@+id/btn_web"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/clear"
+        android:onClick="web"
+        android:layout_marginEnd="10dp" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                app:cardBackgroundColor="@color/latte"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/coder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/gilroy_bold"
+                    android:text="@string/profile"
+                    android:textColor="@color/coal"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/gilroy_semi"
+                    android:text="@string/practice"
+                    android:textColor="@color/churn" />
+
+                <Button
+                    android:id="@+id/profBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/clear"
+                    android:onClick="profile" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gilroy_bold"
+                android:text="@string/info"
+                android:textColor="?colorOnPrimary" />
+
+            <GridLayout
+                android:id="@+id/uno"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/info"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:columnCount="2"
+                android:rowCount="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/qr"
+                    style="@style/dash"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/pc_scan" />
+
+                        <TextView
+                            style="@style/dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/code" />
+
+                        <Button
+                            android:id="@+id/btn_qr"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/clear"
+                            android:onClick="scan" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/wellness"
+                    style="@style/dash"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    android:theme="@style/dash">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20dp"
+                            android:contentDescription="@string/todo"
+                            android:src="@drawable/pc_wellness" />
+
+                        <TextView
+                            style="@style/dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/wellness" />
+
+                        <Button
+                            android:id="@+id/btn_health"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/clear"
+                            android:onClick="health" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/assistant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/uno"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/gilroy_bold"
+                android:text="@string/assistant"
+                android:textColor="?colorOnPrimary" />
+
+            <GridLayout
+                android:id="@+id/dos"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_below="@+id/assistant"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:columnCount="2"
+                android:rowCount="1">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="2"
+                    android:layout_columnWeight="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/communication"
+                        style="@style/dash"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_margin="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerInParent="true"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/pc_message" />
+
+                            <TextView
+                                style="@style/dash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="15dp"
+                                android:text="@string/communication" />
+
+                            <Button
+                                android:id="@+id/btn_communication"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/clear"
+                                android:onClick="contact" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/dash"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_below="@id/communication"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <ImageView
+                                android:id="@+id/write"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="40dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/ic_note" />
+
+                            <TextView
+                                android:id="@+id/note"
+                                style="@style/dash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_toEndOf="@id/write"
+                                android:text="@string/notepad" />
+
+                            <Button
+                                android:id="@+id/btn_notepad"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/clear"
+                                android:onClick="note" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="2"
+                    android:layout_columnWeight="1">
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/dash"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/sheet"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="20dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/ic_sheets" />
+
+                            <TextView
+                                android:id="@+id/sheets"
+                                style="@style/dash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sheet"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/sheet" />
+
+                            <Button
+                                android:id="@+id/btn_sheets"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/clear"
+                                android:onClick="sheets" />
+
+                            <ImageView
+                                android:id="@+id/split"
+                                android:layout_width="50dp"
+                                android:layout_height="20dp"
+                                android:layout_below="@+id/sheets"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/ic_split" />
+
+                            <ImageView
+                                android:id="@+id/meet"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_below="@+id/split"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/ic_meet" />
+
+                            <TextView
+                                android:id="@+id/meets"
+                                style="@style/dash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/meet"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/meet" />
+
+                            <Button
+                                android:id="@+id/btn_meets"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/split"
+                                android:background="@color/clear"
+                                android:onClick="meets" />
+
+                            <ImageView
+                                android:id="@+id/spleet"
+                                android:layout_width="50dp"
+                                android:layout_height="20dp"
+                                android:layout_below="@+id/meets"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/ic_split" />
+
+                            <ImageView
+                                android:id="@+id/calendar"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_below="@+id/spleet"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/ic_calendar" />
+
+                            <TextView
+                                android:id="@+id/calendars"
+                                style="@style/dash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/calendar"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/calendar" />
+
+                            <Button
+                                android:id="@+id/btn_calendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_below="@+id/spleet"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/clear"
+                                android:onClick="calendar" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/desk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dos"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/gilroy_bold"
+                android:text="@string/desk"
+                android:textColor="?colorOnPrimary" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/blog"
+                style="@style/dash"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@+id/desk"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/blogImage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_blog" />
+
+                    <TextView
+                        android:id="@+id/blogTitle"
+                        style="@style/dash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_toEndOf="@id/blogImage"
+                        android:text="@string/blog" />
+
+                    <TextView
+                        android:id="@+id/blogDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/blogTitle"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/blogImage"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/blog2"
+                        style="@style/duke"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/blogButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/clear"
+                        android:onClick="blog" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/canvas"
+                style="@style/dash"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@+id/blog"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/lms"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_canvas"
+                        style="@style/duke" />
+
+                    <TextView
+                        android:id="@+id/canevas"
+                        style="@style/dash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_toEndOf="@id/lms"
+                        android:text="@string/canvas" />
+
+                    <TextView
+                        android:id="@+id/canevase"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/canevas"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/lms"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/canva"
+                        style="@style/duke"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/btn_canvas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/clear"
+                        android:onClick="canvas" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/github"
+                style="@style/deuce"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@+id/canvas"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/cat"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:contentDescription="@string/todo"
+                        app:tint="@color/ash"
+                        android:src="@drawable/ic_github" />
+
+                    <TextView
+                        android:id="@+id/git"
+                        style="@style/deuce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_toEndOf="@id/cat"
+                        android:text="@string/github" />
+
+                    <TextView
+                        android:id="@+id/hub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/git"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/cat"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:text="@string/git"
+                        android:textColor="@color/ash"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/btn_github"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/clear"
+                        android:onClick="github" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
