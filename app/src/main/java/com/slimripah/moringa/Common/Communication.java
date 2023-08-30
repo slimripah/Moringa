@@ -12,6 +12,8 @@ import android.widget.Button;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.slimripah.moringa.R;
+import com.slimripah.moringa.Webviews.GmailWebview;
+import com.slimripah.moringa.Webviews.SheetsWebview;
 
 public class Communication extends AppCompatActivity {
 
@@ -38,7 +40,15 @@ public class Communication extends AppCompatActivity {
     }
 
     public void gmail(View view) {
-        openWebPage("https://www.google.com/gmail/"); // Open Gmail webpage
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String userEmail = sharedPreferences.getString("userEmail", null);
+
+        if (userEmail != null) {
+            String gmailUrl = "https://www.google.com/gmail/";
+            Intent intent = new Intent(this, GmailWebview.class);
+            intent.putExtra("urlFour", gmailUrl);
+            startActivity(intent);
+        }
     }
 
     public void slack(View view) {

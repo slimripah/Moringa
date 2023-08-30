@@ -18,6 +18,8 @@ import com.slimripah.moringa.Webviews.SheetsWebview;
 public class Dashboard extends AppCompatActivity {
 
     private TextView name; // TextView to display the user's name
+    private String userEmail; // Declare userEmail as a class-level field
+    private SharedPreferences sharedPreferences; // Declare sharedPreferences as a class-level field
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,11 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void contact(View view) {
-        startActivity(new Intent(this, Communication.class));
+        if (userEmail != null) {
+            Intent intent = new Intent(this, Communication.class);
+            intent.putExtra("userEmail", userEmail);
+            startActivity(intent);
+        }
     }
 
     public void note(View view) {
