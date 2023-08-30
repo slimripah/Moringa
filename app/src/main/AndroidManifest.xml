@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Moringa"
         tools:targetApi="31">
         <activity
+            android:name=".Webviews.PortalWebview"
+            android:exported="false" />
+        <activity
             android:name=".Webviews.GmailWebview"
             android:exported="false" />
         <activity

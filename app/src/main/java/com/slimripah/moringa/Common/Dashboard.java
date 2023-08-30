@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.slimripah.moringa.R;
 import com.slimripah.moringa.Webviews.CalendarWebview;
 import com.slimripah.moringa.Webviews.MeetsWebview;
+import com.slimripah.moringa.Webviews.PortalWebview;
 import com.slimripah.moringa.Webviews.SheetsWebview;
 
 public class Dashboard extends AppCompatActivity {
@@ -75,7 +76,9 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void profile(View view) {
-        openWebPage("https://moringa-student-portal.vercel.app/");
+        Intent intent = new Intent(Dashboard.this, PortalWebview.class);
+        intent.putExtra("urlTwo", "https://moringa-student-portal.vercel.app/");
+        startActivity(intent);
     }
 
     public void web(View view) {
