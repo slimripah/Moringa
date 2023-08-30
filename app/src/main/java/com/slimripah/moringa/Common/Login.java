@@ -3,7 +3,9 @@ package com.slimripah.moringa.Common;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,7 +23,6 @@ import com.slimripah.moringa.R;
 
 public class Login extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1001; // Request code for sign-in
-
 
     private GoogleSignInClient mGoogleSignInClient; // Google sign-in client
     private ImageView googleBtn; // Google sign-in button
@@ -75,12 +76,21 @@ public class Login extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             if (account != null) {
+                storeUserAccount(account.getEmail()); // Store user's email in SharedPreferences
                 navigateToDashboard(account.getDisplayName());
             }
         } catch (ApiException e) {
             Toast.makeText(getApplicationContext(), "Failed to sign in", Toast.LENGTH_SHORT).show();
             Log.e("LoginActivity", "signInResult:failed code=" + e.getStatusCode());
         }
+    }
+
+    //store user login details
+    private void storeUserAccount(String email) {
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("userEmail", email);
+        editor.apply();
     }
 
     // Method to navigate to the Dashboard activity

@@ -2,13 +2,18 @@ package com.slimripah.moringa.Common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.slimripah.moringa.R;
+import com.slimripah.moringa.Webviews.CalendarWebview;
+import com.slimripah.moringa.Webviews.MeetsWebview;
+import com.slimripah.moringa.Webviews.SheetsWebview;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -24,6 +29,10 @@ public class Dashboard extends AppCompatActivity {
         // Retrieve the user's name from the intent
         String personName = getIntent().getStringExtra("personName");
         name.setText(personName); // Display the user's name in the TextView
+
+        // Retrieve stored user account information
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String userEmail = sharedPreferences.getString("userEmail", null);
 
     }
 
@@ -64,15 +73,42 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void sheets(View view) {
-        openWebPage("https://docs.google.com/spreadsheets/u/0/");
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String userEmail = sharedPreferences.getString("userEmail", null);
+
+        if (userEmail != null) {
+            String sheetsUrl = "https://docs.google.com/spreadsheets/u/0/";
+            Intent intent = new Intent(this, SheetsWebview.class);
+            intent.putExtra("urlOne", sheetsUrl);
+            startActivity(intent);
+        }
+
     }
 
     public void meets(View view) {
-        openWebPage("https://meet.google.com/?hs=197&authuser=0&pli=1");
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String userEmail = sharedPreferences.getString("userEmail", null);
+
+        if (userEmail != null) {
+            String meetsUrl = "https://meet.google.com/?hs=197&authuser=0&pli=1";
+            Intent intent = new Intent(this, MeetsWebview.class);
+            intent.putExtra("urlTwo", meetsUrl);
+            startActivity(intent);
+        }
+
     }
 
     public void calendar(View view) {
-        openWebPage("https://calendar.google.com/calendar/u/0/r?pli=1");
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String userEmail = sharedPreferences.getString("userEmail", null);
+
+        if (userEmail != null) {
+            String calendarUrl = "https://calendar.google.com/calendar/u/0/r?pli=1";
+            Intent intent = new Intent(this, CalendarWebview.class);
+            intent.putExtra("urlThree", calendarUrl);
+            startActivity(intent);
+        }
+
     }
 
     public void canvas(View view) {
