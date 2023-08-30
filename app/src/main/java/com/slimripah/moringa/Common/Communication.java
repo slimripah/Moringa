@@ -18,6 +18,8 @@ import com.slimripah.moringa.Webviews.SheetsWebview;
 public class Communication extends AppCompatActivity {
 
     LottieAnimationView lottieBubble;
+    private String userEmail; // Declare userEmail as a class-level field
+    private SharedPreferences sharedPreferences; // Declare sharedPreferences as a class-level field
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +28,11 @@ public class Communication extends AppCompatActivity {
 
         lottieBubble = findViewById(R.id.bubble);
 
-        // Retrieve stored user account information
-        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-        String userEmail = sharedPreferences.getString("userEmail", null);
+        // Retrieve the user email from the intent
+        userEmail = getIntent().getStringExtra("userEmail");
+
+        // Initialize sharedPreferences with UserPrefs
+        sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
 
     }
 
@@ -40,9 +44,6 @@ public class Communication extends AppCompatActivity {
     }
 
     public void gmail(View view) {
-        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-        String userEmail = sharedPreferences.getString("userEmail", null);
-
         if (userEmail != null) {
             String gmailUrl = "https://www.google.com/gmail/";
             Intent intent = new Intent(this, GmailWebview.class);

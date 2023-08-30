@@ -33,8 +33,8 @@ public class Dashboard extends AppCompatActivity {
         name.setText(personName); // Display the user's name in the TextView
 
         // Retrieve stored user account information
-        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-        String userEmail = sharedPreferences.getString("userEmail", null);
+        sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        userEmail = sharedPreferences.getString("userEmail", null);
 
     }
 
@@ -63,7 +63,11 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void note(View view) {
-        startActivity(new Intent(this, Notepad.class));
+        if (userEmail != null) {
+            Intent intent = new Intent(this, Notepad.class);
+            intent.putExtra("userEmail", userEmail);
+            startActivity(intent);
+        }
     }
 
     public void blog(View view) {

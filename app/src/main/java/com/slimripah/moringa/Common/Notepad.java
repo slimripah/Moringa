@@ -19,6 +19,8 @@ import com.slimripah.moringa.Webviews.TasksWebview;
 public class Notepad extends AppCompatActivity {
 
     LottieAnimationView lottieTask;
+    private String userEmail; // Declare userEmail as a class-level field
+    private SharedPreferences sharedPreferences; // Declare sharedPreferences as a class-level field
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +29,15 @@ public class Notepad extends AppCompatActivity {
 
         lottieTask = findViewById(R.id.task);
 
-        // Retrieve stored user account information
-        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-        String userEmail = sharedPreferences.getString("userEmail", null);
+        // Retrieve the user email from the intent
+        userEmail = getIntent().getStringExtra("userEmail");
+
+        // Initialize sharedPreferences with UserPrefs
+        sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
 
     }
 
     public void remind(View view) {
-        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-        String userEmail = sharedPreferences.getString("userEmail", null);
-
         if (userEmail != null) {
             String RemindersUrl = "https://keep.google.com/u/0/#reminders";
             Intent intent = new Intent(this, RemindersWebview.class);
@@ -47,9 +48,6 @@ public class Notepad extends AppCompatActivity {
     }
 
     public void todo(View view) {
-        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-        String userEmail = sharedPreferences.getString("userEmail", null);
-
         if (userEmail != null) {
             String TasksUrl = "https://keep.google.com/u/0/#home";
             Intent intent = new Intent(this, TasksWebview.class);
@@ -59,9 +57,6 @@ public class Notepad extends AppCompatActivity {
     }
 
     public void noter(View view) {
-        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-        String userEmail = sharedPreferences.getString("userEmail", null);
-
         if (userEmail != null) {
             String notesUrl = "https://docs.google.com/";
             Intent intent = new Intent(this, NotesWebview.class);
