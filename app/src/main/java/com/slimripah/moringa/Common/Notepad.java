@@ -33,13 +33,6 @@ public class Notepad extends AppCompatActivity {
 
     }
 
-    // Method to open a webpage
-    private void openWebPage(String url) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        startActivity(intent);
-    }
-
     public void remind(View view) {
         SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
         String userEmail = sharedPreferences.getString("userEmail", null);
