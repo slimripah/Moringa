@@ -15,6 +15,15 @@
         android:theme="@style/Theme.Moringa"
         tools:targetApi="31">
         <activity
+            android:name=".Webviews.NotesWebview"
+            android:exported="false" />
+        <activity
+            android:name=".Webviews.TasksWebview"
+            android:exported="false" />
+        <activity
+            android:name=".Webviews.RemindersWebview"
+            android:exported="false" />
+        <activity
             android:name=".Webviews.CalendarWebview"
             android:exported="false" />
         <activity

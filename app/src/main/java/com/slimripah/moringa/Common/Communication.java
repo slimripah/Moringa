@@ -2,7 +2,9 @@ package com.slimripah.moringa.Common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +23,10 @@ public class Communication extends AppCompatActivity {
         setContentView(R.layout.activity_communication);
 
         lottieBubble = findViewById(R.id.bubble);
+
+        // Retrieve stored user account information
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String userEmail = sharedPreferences.getString("userEmail", null);
 
     }
 

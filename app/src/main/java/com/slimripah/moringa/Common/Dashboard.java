@@ -65,7 +65,7 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void profile(View view) {
-        openWebPage("https://myaccount.google.com/");
+        openWebPage("https://moringa-student-portal.vercel.app/");
     }
 
     public void web(View view) {
@@ -77,7 +77,7 @@ public class Dashboard extends AppCompatActivity {
         String userEmail = sharedPreferences.getString("userEmail", null);
 
         if (userEmail != null) {
-            String sheetsUrl = "https://docs.google.com/spreadsheets/u/0/";
+            String sheetsUrl = "https://docs.google.com/spreadsheets/";
             Intent intent = new Intent(this, SheetsWebview.class);
             intent.putExtra("urlOne", sheetsUrl);
             startActivity(intent);
@@ -90,7 +90,7 @@ public class Dashboard extends AppCompatActivity {
         String userEmail = sharedPreferences.getString("userEmail", null);
 
         if (userEmail != null) {
-            String meetsUrl = "https://meet.google.com/?hs=197&authuser=0&pli=1";
+            String meetsUrl = "https://meet.google.com/";
             Intent intent = new Intent(this, MeetsWebview.class);
             intent.putExtra("urlTwo", meetsUrl);
             startActivity(intent);
@@ -103,7 +103,7 @@ public class Dashboard extends AppCompatActivity {
         String userEmail = sharedPreferences.getString("userEmail", null);
 
         if (userEmail != null) {
-            String calendarUrl = "https://calendar.google.com/calendar/u/0/r?pli=1";
+            String calendarUrl = "https://calendar.google.com/";
             Intent intent = new Intent(this, CalendarWebview.class);
             intent.putExtra("urlThree", calendarUrl);
             startActivity(intent);
