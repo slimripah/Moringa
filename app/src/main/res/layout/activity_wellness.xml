@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/health"
+        android:textColor="?colorOnPrimary"
         android:layout_marginTop="120dp"
         android:layout_centerHorizontal="true"
         android:text="@string/tired"
@@ -31,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tired2"
+        android:textColor="?colorOnPrimary"
         android:layout_below="@id/health2"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/gilroy_bold" />

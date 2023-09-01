@@ -12,6 +12,7 @@ import android.view.View;
 import com.airbnb.lottie.LottieAnimationView;
 import com.slimripah.moringa.R;
 import com.slimripah.moringa.Webviews.BlogWebview;
+import com.slimripah.moringa.Webviews.WellnessWebview;
 
 public class Wellness extends AppCompatActivity {
 
@@ -31,7 +32,7 @@ public class Wellness extends AppCompatActivity {
     }
 
     public void fill(View view) {
-        Intent intent = new Intent(Wellness.this, Wellness.class);
+        Intent intent = new Intent(Wellness.this, WellnessWebview.class);
         intent.putExtra("urlWell", "https://docs.google.com/forms/");
         startActivity(intent);
     }
