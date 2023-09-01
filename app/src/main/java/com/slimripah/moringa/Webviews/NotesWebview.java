@@ -23,7 +23,7 @@ public class NotesWebview extends AppCompatActivity {
         // Retrieve the URL from the intent's extra
         Intent intent = getIntent();
         if (intent != null) {
-            String urlSeven = intent.getStringExtra("urlOne");
+            String urlSeven = intent.getStringExtra("urlSeven");
             webViewSeven = findViewById(R.id.webViewSeven);
             webViewSeven.loadUrl(urlSeven);
             webViewSeven.setWebViewClient(new WebViewClient());

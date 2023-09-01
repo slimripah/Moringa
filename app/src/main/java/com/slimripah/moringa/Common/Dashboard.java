@@ -11,10 +11,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.slimripah.moringa.R;
+import com.slimripah.moringa.Webviews.BlogWebview;
 import com.slimripah.moringa.Webviews.CalendarWebview;
+import com.slimripah.moringa.Webviews.CanvasWebview;
+import com.slimripah.moringa.Webviews.GithubWebview;
 import com.slimripah.moringa.Webviews.MeetsWebview;
 import com.slimripah.moringa.Webviews.PortalWebview;
 import com.slimripah.moringa.Webviews.SheetsWebview;
+import com.slimripah.moringa.Webviews.SiteWebview;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -72,17 +76,23 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void blog(View view) {
-        openWebPage("https://moringa-alumni.vercel.app/");
+        Intent intent = new Intent(Dashboard.this, BlogWebview.class);
+        intent.putExtra("urlBlog", "https://moringa-alumni.vercel.app/");
+        startActivity(intent);
     }
 
     public void profile(View view) {
         Intent intent = new Intent(Dashboard.this, PortalWebview.class);
-        intent.putExtra("urlTwo", "https://moringa-student-portal.vercel.app/");
+        intent.putExtra("urlZero", "https://moringa-student-portal.vercel.app/");
         startActivity(intent);
     }
 
     public void web(View view) {
-        openWebPage("https://moringaschool.com/");
+
+        String url = "https://moringaschool.com/";
+        Intent intent = new Intent(this, SiteWebview.class);
+        intent.putExtra("urlSite", url);
+        startActivity(intent);
     }
 
     public void sheets(View view) {
@@ -125,11 +135,15 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void canvas(View view) {
-        openWebPage("https://moringa.instructure.com");
+        Intent intent = new Intent(Dashboard.this, CanvasWebview.class);
+        intent.putExtra("urlCanvas", "https://moringa.instructure.com");
+        startActivity(intent);
     }
 
     public void github(View view) {
-        openWebPage("https://github.com/");
+        Intent intent = new Intent(Dashboard.this, GithubWebview.class);
+        intent.putExtra("urlGit", "https://github.com/");
+        startActivity(intent);
     }
 
 }

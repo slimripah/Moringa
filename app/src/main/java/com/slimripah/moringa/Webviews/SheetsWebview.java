@@ -23,9 +23,9 @@ public class SheetsWebview extends AppCompatActivity {
         // Retrieve the URL from the intent's extra
         Intent intent = getIntent();
         if (intent != null) {
-            String urlTwo = intent.getStringExtra("urlOne");
+            String urlOne = intent.getStringExtra("urlOne");
             webViewOne = findViewById(R.id.webViewOne);
-            webViewOne.loadUrl(urlTwo);
+            webViewOne.loadUrl(urlOne);
             webViewOne.setWebViewClient(new WebViewClient());
             webViewOne.getSettings().setJavaScriptEnabled(true); // Enable JavaScript
         }

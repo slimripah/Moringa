@@ -23,9 +23,9 @@ public class CalendarWebview extends AppCompatActivity {
         // Retrieve the URL from the intent's extra
         Intent intent = getIntent();
         if (intent != null) {
-            String urlTwo = intent.getStringExtra("urlThree");
+            String urlThree = intent.getStringExtra("urlThree");
             webViewThree = findViewById(R.id.webViewThree);
-            webViewThree.loadUrl(urlTwo);
+            webViewThree.loadUrl(urlThree);
             webViewThree.setWebViewClient(new WebViewClient());
             webViewThree.getSettings().setJavaScriptEnabled(true); // Enable JavaScript
         }
