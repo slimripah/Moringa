@@ -15,6 +15,18 @@
         android:theme="@style/Theme.Moringa"
         tools:targetApi="31">
         <activity
+            android:name=".Webviews.SiteWebview"
+            android:exported="false" />
+        <activity
+            android:name=".Webviews.BlogWebview"
+            android:exported="false" />
+        <activity
+            android:name=".Webviews.GithubWebview"
+            android:exported="false" />
+        <activity
+            android:name=".Webviews.CanvasWebview"
+            android:exported="false" />
+        <activity
             android:name=".Webviews.PortalWebview"
             android:exported="false" />
         <activity
