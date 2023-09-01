@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.slimripah.moringa.R;
+import com.slimripah.moringa.Webviews.BlogWebview;
 
 public class Wellness extends AppCompatActivity {
 
@@ -29,15 +30,10 @@ public class Wellness extends AppCompatActivity {
 
     }
 
-    // Method to open a webpage
-    private void openWebPage(String url) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        startActivity(intent);
-    }
-
     public void fill(View view) {
-        openWebPage("https://docs.google.com/forms/"); // Open Reminders webpage
+        Intent intent = new Intent(Wellness.this, Wellness.class);
+        intent.putExtra("urlWell", "https://docs.google.com/forms/");
+        startActivity(intent);
     }
 
 }

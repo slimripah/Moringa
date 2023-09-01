@@ -43,13 +43,6 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
-    // Method to open a webpage
-    private void openWebPage(String url) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        startActivity(intent);
-    }
-
     // Button click listeners
     public void scan(View view) {
         startActivity(new Intent(this, CodeScanner.class));
