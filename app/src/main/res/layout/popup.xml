@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="350dp"
+    android:layout_height="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
-    android:background="@drawable/quote"
-    android:padding="30dp">
+    android:background="@drawable/quote">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/lt_ripah"/>
 
     <TextView
         android:id="@+id/quote_of_the_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:fontFamily="@font/gilroy_semi"
-        android:justificationMode="inter_word"
-        android:text=""
+        android:layout_margin="75dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center_horizontal"
+        android:text="@string/quoteOne"
         android:textColor="@color/smoke"
         android:textSize="13sp" />
 
