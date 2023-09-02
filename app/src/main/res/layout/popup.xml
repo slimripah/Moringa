@@ -7,8 +7,9 @@
     android:background="@drawable/quote">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="80dp"
-        android:layout_height="90dp"
+        android:id="@+id/ripah"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         app:lottie_autoPlay="true"
@@ -18,22 +19,24 @@
         android:id="@+id/quote_of_the_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="75dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginTop="175dp"
         android:fontFamily="@font/gilroy_bold"
         android:gravity="center_horizontal"
-        android:text="@string/quoteOne"
-        android:textColor="@color/smoke"
+        android:text="@string/quoteTwentyThree"
+        android:textColor="@color/coal"
         android:textSize="13sp" />
 
     <TextView
         android:id="@+id/txtclose"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:text="X"
+        android:text="x"
+        android:layout_margin="20dp"
         android:textSize="12sp"
         android:fontFamily="@font/gilroy_bold"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:background="@drawable/bc_circle"
         android:textColor="@color/coal"
         android:layout_alignParentEnd="true"
