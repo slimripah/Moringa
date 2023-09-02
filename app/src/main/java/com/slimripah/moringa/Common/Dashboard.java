@@ -44,8 +44,8 @@ public class Dashboard extends AppCompatActivity {
     }
 
     // Button click listeners
-    public void scan(View view) {
-        startActivity(new Intent(this, CodeScanner.class));
+    public void quote(View view) {
+        startActivity(new Intent(this, Quote.class));
     }
 
     public void health(View view) {
