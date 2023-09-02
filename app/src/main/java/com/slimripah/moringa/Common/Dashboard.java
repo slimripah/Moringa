@@ -51,10 +51,7 @@ public class Dashboard extends AppCompatActivity {
 
     // Button click listeners
     public void quote(View view) {
-        TextView txtclose;
         myDialog.setContentView(R.layout.popup);
-        txtclose = myDialog.findViewById(R.id.txtclose);
-        txtclose.setOnClickListener(v -> myDialog.dismiss());
 
         myDialog.show();
     }
