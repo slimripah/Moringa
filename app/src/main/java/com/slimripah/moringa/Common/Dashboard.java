@@ -2,6 +2,7 @@ package com.slimripah.moringa.Common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,6 +27,9 @@ public class Dashboard extends AppCompatActivity {
     private String userEmail; // Declare userEmail as a class-level field
     private SharedPreferences sharedPreferences; // Declare sharedPreferences as a class-level field
 
+    //popup
+    Dialog myDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +45,18 @@ public class Dashboard extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
         userEmail = sharedPreferences.getString("userEmail", null);
 
+        myDialog = new Dialog(this);
+
     }
 
     // Button click listeners
     public void quote(View view) {
-        startActivity(new Intent(this, Quote.class));
+        TextView txtclose;
+        myDialog.setContentView(R.layout.popup);
+        txtclose = myDialog.findViewById(R.id.txtclose);
+        txtclose.setOnClickListener(v -> myDialog.dismiss());
+
+        myDialog.show();
     }
 
     public void health(View view) {
