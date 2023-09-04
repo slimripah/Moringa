@@ -60,6 +60,40 @@
 
     <string name="todo">image</string>
 
+    <string-array name="daily_quotes">
+        <item>@string/quoteOne</item>
+        <item>@string/quoteTwo</item>
+        <item>@string/quoteThree</item>
+        <item>@string/quoteFour</item>
+        <item>@string/quoteFive</item>
+        <item>@string/quoteSix</item>
+        <item>@string/quoteSeven</item>
+        <item>@string/quoteEight</item>
+        <item>@string/quoteNine</item>
+        <item>@string/quoteTen</item>
+        <item>@string/quoteEleven</item>
+        <item>@string/quoteTwelve</item>
+        <item>@string/quoteThirteen</item>
+        <item>@string/quoteFourteen</item>
+        <item>@string/quoteFifteen</item>
+        <item>@string/quoteSixteen</item>
+        <item>@string/quoteSeventeen</item>
+        <item>@string/quoteEighteen</item>
+        <item>@string/quoteNineteen</item>
+        <item>@string/quoteTwenty</item>
+        <item>@string/quoteTwentyOne</item>
+        <item>@string/quoteTwentyTwo</item>
+        <item>@string/quoteTwentyThree</item>
+        <item>@string/quoteTwentyFour</item>
+        <item>@string/quoteTwentyFive</item>
+        <item>@string/quoteTwentySix</item>
+        <item>@string/quoteTwentySeven</item>
+        <item>@string/quoteTwentyEight</item>
+        <item>@string/quoteTwentyNine</item>
+        <item>@string/quoteThirty</item>
+        <item>@string/quoteThirtyOne</item>
+    </string-array>
+
     <string name="consistency">what you dwell on expands</string>
 
     <string name="quoteOne">Experience is the name everyone gives to their mistakes</string>

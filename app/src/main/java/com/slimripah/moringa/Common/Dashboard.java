@@ -6,7 +6,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -21,6 +20,8 @@ import com.slimripah.moringa.Webviews.PortalWebview;
 import com.slimripah.moringa.Webviews.SheetsWebview;
 import com.slimripah.moringa.Webviews.SiteWebview;
 
+import java.util.Random;
+
 public class Dashboard extends AppCompatActivity {
 
     private TextView name; // TextView to display the user's name
@@ -29,6 +30,9 @@ public class Dashboard extends AppCompatActivity {
 
     //popup
     Dialog myDialog;
+
+    // Reference to TextView
+    private TextView quoteOfTheDayTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +50,28 @@ public class Dashboard extends AppCompatActivity {
         userEmail = sharedPreferences.getString("userEmail", null);
 
         myDialog = new Dialog(this);
+        quoteOfTheDayTextView = myDialog.findViewById(R.id.quote_of_the_day);
+
+        // Display the initial quote
+        updateQuoteOfTheDay();
 
     }
 
     // Button click listeners
     public void quote(View view) {
         myDialog.setContentView(R.layout.popup);
+        quoteOfTheDayTextView = myDialog.findViewById(R.id.quote_of_the_day);
+        updateQuoteOfTheDay();
         myDialog.show();
+    }
+
+    // Method to update the quote_of_the_day TextView with a random quote
+    private void updateQuoteOfTheDay() {
+        String[] quotes = getResources().getStringArray(R.array.daily_quotes);
+        Random random = new Random();
+        int randomIndex = random.nextInt(quotes.length);
+        String randomQuote = quotes[randomIndex];
+        quoteOfTheDayTextView.setText(randomQuote);
     }
 
     public void health(View view) {
