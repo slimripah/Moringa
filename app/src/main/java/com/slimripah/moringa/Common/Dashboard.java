@@ -31,9 +31,6 @@ public class Dashboard extends AppCompatActivity {
     //popup
     Dialog myDialog;
 
-    // Reference to TextView
-    private TextView quoteOfTheDayTextView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,28 +47,13 @@ public class Dashboard extends AppCompatActivity {
         userEmail = sharedPreferences.getString("userEmail", null);
 
         myDialog = new Dialog(this);
-        quoteOfTheDayTextView = myDialog.findViewById(R.id.quote_of_the_day);
-
-        // Display the initial quote
-        updateQuoteOfTheDay();
 
     }
 
     // Button click listeners
     public void quote(View view) {
         myDialog.setContentView(R.layout.popup);
-        quoteOfTheDayTextView = myDialog.findViewById(R.id.quote_of_the_day);
-        updateQuoteOfTheDay();
         myDialog.show();
-    }
-
-    // Method to update the quote_of_the_day TextView with a random quote
-    private void updateQuoteOfTheDay() {
-        String[] quotes = getResources().getStringArray(R.array.daily_quotes);
-        Random random = new Random();
-        int randomIndex = random.nextInt(quotes.length);
-        String randomQuote = quotes[randomIndex];
-        quoteOfTheDayTextView.setText(randomQuote);
     }
 
     public void health(View view) {
