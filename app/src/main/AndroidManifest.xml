@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Moringa"
         tools:targetApi="31">
         <activity
+            android:name=".Webviews.SlackWebview"
+            android:exported="false" />
+        <activity
             android:name=".Common.Quote"
             android:exported="false" />
         <activity

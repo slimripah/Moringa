@@ -57,4 +57,11 @@
 
     </style>
 
+    <style name="ripah">
+
+        <!-- Colors -->
+        <item name="cardCornerRadius">15dp</item>
+
+    </style>
+
 </resources>

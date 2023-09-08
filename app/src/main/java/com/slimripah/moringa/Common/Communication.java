@@ -14,6 +14,7 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.slimripah.moringa.R;
 import com.slimripah.moringa.Webviews.GmailWebview;
 import com.slimripah.moringa.Webviews.SheetsWebview;
+import com.slimripah.moringa.Webviews.SlackWebview;
 
 public class Communication extends AppCompatActivity {
 
@@ -36,13 +37,6 @@ public class Communication extends AppCompatActivity {
 
     }
 
-    // Method to open a webpage
-    private void openWebPage(String url) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        startActivity(intent);
-    }
-
     public void gmail(View view) {
         if (userEmail != null) {
             String gmailUrl = "https://www.google.com/gmail/";
@@ -53,7 +47,13 @@ public class Communication extends AppCompatActivity {
     }
 
     public void slack(View view) {
-        openWebPage("https://slack.com/"); // Open Slack webpage
+        if (userEmail != null) {
+            String slackUrl = "https://slack.com/";
+            Intent intent = new Intent(this, SlackWebview.class);
+            intent.putExtra("urlSlack", slackUrl);
+            startActivity(intent);
+        }
+
     }
 
 }

@@ -14,7 +14,7 @@
         <item name="colorOnSecondary">@color/gold</item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorSecondaryVariant</item>
         <item name="android:windowLightStatusBar">true</item>
 
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
@@ -53,6 +53,13 @@
 
         <!-- Colors -->
         <item name="cardBackgroundColor">@color/coal</item>
+        <item name="cardCornerRadius">15dp</item>
+
+    </style>
+
+    <style name="ripah">
+
+        <!-- Colors -->
         <item name="cardCornerRadius">15dp</item>
 
     </style>
