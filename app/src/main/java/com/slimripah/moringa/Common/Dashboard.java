@@ -52,7 +52,7 @@ public class Dashboard extends AppCompatActivity {
 
     // Button click listeners
     public void quote(View view) {
-        myDialog.setContentView(R.layout.popup);
+        myDialog.setContentView(R.layout.activity_popup);
         myDialog.show();
     }
 
